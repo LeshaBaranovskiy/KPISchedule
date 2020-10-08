@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewWeekDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lobster"
+        android:text="@string/Monday"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline008h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFirstClassTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8:30"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline024h"
+        app:layout_constraintEnd_toStartOf="@+id/guideline015v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline008h" />
+
+    <TextView
+        android:id="@+id/textView1LessonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1TeacherName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toTopOf="@+id/guideline008h" />
+
+    <TextView
+        android:id="@+id/textView1TeacherName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1Auditory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView1LessonName" />
+
+    <TextView
+        android:id="@+id/textView1Auditory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline024h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView1TeacherName" />
+
+    <TextView
+        android:id="@+id/textViewSecondClassTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10:25"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline04h"
+        app:layout_constraintEnd_toStartOf="@+id/guideline015v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline024h" />
+
+    <TextView
+        android:id="@+id/textView2LessonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2TeacherName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toTopOf="@+id/guideline024h" />
+
+    <TextView
+        android:id="@+id/textView2TeacherName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2Auditory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView2LessonName" />
+
+    <TextView
+        android:id="@+id/textView2Auditory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline04h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView2TeacherName" />
+
+    <TextView
+        android:id="@+id/textViewSecondThirdTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12:20"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline056h"
+        app:layout_constraintEnd_toStartOf="@+id/guideline015v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline04h" />
+
+    <TextView
+        android:id="@+id/textView3LessonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3TeacherName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toTopOf="@+id/guideline04h" />
+
+    <TextView
+        android:id="@+id/textView3TeacherName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3Auditory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView3LessonName" />
+
+    <TextView
+        android:id="@+id/textView3Auditory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline056h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView3TeacherName" />
+
+    <TextView
+        android:id="@+id/textViewSecondFourthTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="14:15"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline072h"
+        app:layout_constraintEnd_toStartOf="@+id/guideline015v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline056h" />
+
+    <TextView
+        android:id="@+id/textView4LessonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4TeacherName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toTopOf="@+id/guideline056h" />
+
+    <TextView
+        android:id="@+id/textView4TeacherName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4Auditory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView4LessonName" />
+
+    <TextView
+        android:id="@+id/textView4Auditory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline072h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView4TeacherName" />
+
+    <TextView
+        android:id="@+id/textViewSecondFifthTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="16:10"
+        android:textSize="18sp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/guideline088h"
+        app:layout_constraintEnd_toStartOf="@+id/guideline015v"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline072h" />
+
+    <TextView
+        android:id="@+id/textView5LessonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5TeacherName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toTopOf="@+id/guideline072h" />
+
+    <TextView
+        android:id="@+id/textView5TeacherName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5Auditory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView5LessonName" />
+
+    <TextView
+        android:id="@+id/textView5Auditory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline088h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView5TeacherName" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline008h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline024h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline04h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline056h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline072h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline088h"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline015v"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <View
+        android:id="@+id/viewLine1h"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2E2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/guideline008h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline008h" />
+
+    <View
+        android:id="@+id/viewLine2h"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2E2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/guideline024h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline024h" />
+
+    <View
+        android:id="@+id/viewLine3h"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2E2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/guideline04h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline04h" />
+
+    <View
+        android:id="@+id/viewLine4h"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2E2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/guideline056h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline056h" />
+
+    <View
+        android:id="@+id/viewLine5h"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2E2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/guideline072h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline072h" />
+
+    <View
+        android:id="@+id/viewLine6h"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#2E2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/guideline088h"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline088h" />
+
+    <View
+        android:id="@+id/viewLine1v"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="#2E2C2C"
+        app:layout_constraintBottom_toTopOf="@+id/guideline088h"
+        app:layout_constraintEnd_toStartOf="@+id/guideline015v"
+        app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toTopOf="@+id/guideline008h" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

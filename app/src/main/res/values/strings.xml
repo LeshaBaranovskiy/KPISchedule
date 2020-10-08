@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Розклад КПІ</string>
+    <string name="group_name">Назва групи</string>
+    <string name="Schedule">Розклад занять</string>
+    <string name="kpi_logo">КПІ лого</string>
+    <string name="Monday">Понеділок</string>
+    <string name="toast_write_group">Введіть назву групи</string>
+    <string name="toast_group_not_found">Группа не знайдена</string>
+    <string name="first_week">Перший тиждень</string>
+    <string name="second_week">Другий тиждень</string>
+</resources>
