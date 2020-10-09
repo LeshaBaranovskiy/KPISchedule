@@ -8,4 +8,5 @@
     <string name="toast_group_not_found">Группа не знайдена</string>
     <string name="first_week">Перший тиждень</string>
     <string name="second_week">Другий тиждень</string>
+    <string name="next_el">Наступний день</string>
 </resources>

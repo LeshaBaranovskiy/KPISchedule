@@ -33,6 +33,7 @@
 
     <TextView
         android:id="@+id/textView1LessonName"
+        android:textStyle="italic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -45,26 +46,48 @@
 
     <TextView
         android:id="@+id/textView1TeacherName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView1Auditory"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewRating1"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
         app:layout_constraintTop_toBottomOf="@+id/textView1LessonName" />
 
     <TextView
+        android:id="@+id/textViewRating1"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView1Auditory"
+        app:layout_constraintStart_toEndOf="@+id/textView1TeacherName"
+        app:layout_constraintTop_toBottomOf="@+id/textView1LessonName" />
+
+    <TextView
         android:id="@+id/textView1Auditory"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline024h"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textView1TypeLesson"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintTop_toBottomOf="@+id/textView1TeacherName" />
+
+    <TextView
+        android:id="@+id/textView1TypeLesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline024h"
+        app:layout_constraintStart_toEndOf="@id/textView1Auditory"
         app:layout_constraintTop_toBottomOf="@+id/textView1TeacherName" />
 
     <TextView
@@ -81,6 +104,7 @@
 
     <TextView
         android:id="@+id/textView2LessonName"
+        android:textStyle="italic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -93,26 +117,48 @@
 
     <TextView
         android:id="@+id/textView2TeacherName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView2Auditory"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textViewRating2"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
         app:layout_constraintTop_toBottomOf="@+id/textView2LessonName" />
 
     <TextView
+        android:id="@+id/textViewRating2"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2Auditory"
+        app:layout_constraintStart_toEndOf="@+id/textView2TeacherName"
+        app:layout_constraintTop_toBottomOf="@+id/textView2LessonName" />
+
+    <TextView
         android:id="@+id/textView2Auditory"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline04h"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintEnd_toStartOf="@id/textView2TypeLesson"
+        app:layout_constraintTop_toBottomOf="@+id/textView2TeacherName" />
+
+    <TextView
+        android:id="@+id/textView2TypeLesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline04h"
+        app:layout_constraintStart_toEndOf="@id/textView2Auditory"
         app:layout_constraintTop_toBottomOf="@+id/textView2TeacherName" />
 
     <TextView
@@ -129,6 +175,7 @@
 
     <TextView
         android:id="@+id/textView3LessonName"
+        android:textStyle="italic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -141,26 +188,48 @@
 
     <TextView
         android:id="@+id/textView3TeacherName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView3Auditory"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textViewRating3"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
         app:layout_constraintTop_toBottomOf="@+id/textView3LessonName" />
 
     <TextView
+        android:id="@+id/textViewRating3"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3Auditory"
+        app:layout_constraintStart_toEndOf="@+id/textView3TeacherName"
+        app:layout_constraintTop_toBottomOf="@+id/textView3LessonName" />
+
+    <TextView
         android:id="@+id/textView3Auditory"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline056h"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintEnd_toStartOf="@id/textView3TypeLesson"
+        app:layout_constraintTop_toBottomOf="@+id/textView3TeacherName" />
+
+    <TextView
+        android:id="@+id/textView3TypeLesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline056h"
+        app:layout_constraintStart_toEndOf="@id/textView3Auditory"
         app:layout_constraintTop_toBottomOf="@+id/textView3TeacherName" />
 
     <TextView
@@ -177,6 +246,7 @@
 
     <TextView
         android:id="@+id/textView4LessonName"
+        android:textStyle="italic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -189,26 +259,48 @@
 
     <TextView
         android:id="@+id/textView4TeacherName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView4Auditory"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textViewRating4"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
         app:layout_constraintTop_toBottomOf="@+id/textView4LessonName" />
 
     <TextView
+        android:id="@+id/textViewRating4"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView4Auditory"
+        app:layout_constraintStart_toEndOf="@+id/textView4TeacherName"
+        app:layout_constraintTop_toBottomOf="@+id/textView4LessonName" />
+
+    <TextView
         android:id="@+id/textView4Auditory"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline072h"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintEnd_toStartOf="@+id/textView4TypeLesson"
+        app:layout_constraintTop_toBottomOf="@+id/textView4TeacherName" />
+
+    <TextView
+        android:id="@+id/textView4TypeLesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline072h"
+        app:layout_constraintStart_toEndOf="@id/textView4Auditory"
         app:layout_constraintTop_toBottomOf="@+id/textView4TeacherName" />
 
     <TextView
@@ -225,6 +317,7 @@
 
     <TextView
         android:id="@+id/textView5LessonName"
+        android:textStyle="italic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
@@ -237,26 +330,48 @@
 
     <TextView
         android:id="@+id/textView5TeacherName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/textView5Auditory"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textViewRating5"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
         app:layout_constraintTop_toBottomOf="@+id/textView5LessonName" />
 
     <TextView
+        android:id="@+id/textViewRating5"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5Auditory"
+        app:layout_constraintStart_toEndOf="@+id/textView5TeacherName"
+        app:layout_constraintTop_toBottomOf="@+id/textView5LessonName" />
+
+    <TextView
         android:id="@+id/textView5Auditory"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textColor="#000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline088h"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
+        app:layout_constraintEnd_toStartOf="@id/textView5TypeLesson"
+        app:layout_constraintTop_toBottomOf="@+id/textView5TeacherName" />
+
+    <TextView
+        android:id="@+id/textView5TypeLesson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="#000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline088h"
+        app:layout_constraintStart_toEndOf="@id/textView5Auditory"
         app:layout_constraintTop_toBottomOf="@+id/textView5TeacherName" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -378,5 +493,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline015v"
         app:layout_constraintStart_toStartOf="@+id/guideline015v"
         app:layout_constraintTop_toTopOf="@+id/guideline008h" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/first_week"
         android:title="@string/first_week"/>
     <item android:id="@+id/second_week"
         android:title="@string/second_week" />
+    <item android:id="@+id/next_el"
+        android:title="@string/next_el" />
 </menu>

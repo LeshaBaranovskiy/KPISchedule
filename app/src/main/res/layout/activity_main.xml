@@ -44,6 +44,10 @@
         android:text="@string/Schedule"
         app:layout_constraintEnd_toEndOf="parent"
         android:onClick="showSchedule"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telecom.CallScreeningService;
 import android.util.Log;
@@ -43,6 +44,8 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String USER_GROUP = "group";
+
     private EditText editText;
     private Button buttonShow;
     private ProgressBar progressBar;
@@ -55,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
     private Disposable disposable;
     private Disposable disposable1;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
+
+    private SharedPreferences sharedPreferencesGroup;
+    private SharedPreferences.Editor editor;
 
     private String group = "";
 
@@ -80,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
         textViewChoice3 = findViewById(R.id.textViewChoice3);
         textViewChoice4 = findViewById(R.id.textViewChoice4);
 
+        sharedPreferencesGroup = getSharedPreferences(USER_GROUP, MODE_PRIVATE);
+
+
+        if (sharedPreferencesGroup.getString("group", "").length() > 0) {
+            redirectToSchedule(sharedPreferencesGroup.getString("group", ""));
+        }
 
         apiFactoryGroups = ApiFactoryGroups.getInstance();
         apiServiceGroups = apiFactoryGroups.getApiServiceGroups();
@@ -106,11 +118,10 @@ public class MainActivity extends AppCompatActivity {
         groupName = editText.getText().toString().toLowerCase();
 
         if (!groupName.isEmpty()) {
-            progressBar.setVisibility(View.VISIBLE);
 
             while (groupCount < totalCount) {
+                buttonShow.setEnabled(false);
                 progressBar.setVisibility(View.VISIBLE);
-
                 disposable = apiServiceGroups.getGroupsList(String.format("{\"offset\":%s}", groupCount))
                         .subscribeOn(Schedulers.computation())
                         .observeOn(AndroidSchedulers.mainThread())
@@ -137,7 +148,6 @@ public class MainActivity extends AppCompatActivity {
                         });
                 compositeDisposable.add(disposable);
                 groupCount = groupCount + 100;
-                progressBar.setVisibility(View.INVISIBLE);
             }
             groupCount = 0;
         } else {
@@ -146,11 +156,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findGroup() {
+        buttonShow.setEnabled(true);
+        progressBar.setVisibility(View.INVISIBLE);
         if (!familiar.isEmpty()) {
             switch (familiar.size()) {
                 case 1:
                     group = familiar.get(0);
-                    redirectToSchedule();
+                    redirectToSchedule(group);
+                    addSharedPreferencesGroup(group);
                     break;
                 case 2:
                     textViewChoice1.setText(familiar.get(0).toUpperCase());
@@ -185,16 +198,21 @@ public class MainActivity extends AppCompatActivity {
     public void chooseGroup(View view) {
         TextView textView = findViewById(view.getId());
         group = textView.getText().toString();
+        addSharedPreferencesGroup(group);
         textViewChoice1.setText("");
         textViewChoice2.setText("");
         textViewChoice3.setText("");
         textViewChoice4.setText("");
-        redirectToSchedule();
+        redirectToSchedule(group);
     }
 
-    public void redirectToSchedule() {
+    public void redirectToSchedule(String group) {
         Intent intent = new Intent(this, ScheduleActivity.class);
         intent.putExtra("group", group);
         startActivity(intent);
+    }
+    private void addSharedPreferencesGroup(String group) {
+        editor = sharedPreferencesGroup.edit();
+        editor.putString("group", group).apply();
     }
 }
