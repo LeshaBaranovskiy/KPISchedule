@@ -1,4 +1,4 @@
-package com.example.kpischedule.api;
+package com.example.kpischedule.model.api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -7,14 +7,14 @@ import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ApiFactoryDays {
-    private static ApiFactoryDays apiFactoryDays;
+public class ApiFactoryGroups {
+    private static ApiFactoryGroups apiFactoryGroups;
 
-    private final String BASE_URL = "https://api.rozklad.org.ua/v2/groups/";
+    private final String BASE_URL = "https://api.rozklad.org.ua/v2/";
 
     private static Retrofit retrofit = null;
 
-    private ApiFactoryDays() {
+    private ApiFactoryGroups() {
         if (retrofit == null) {
             Gson gson = new GsonBuilder().setLenient().create();
 
@@ -25,14 +25,14 @@ public class ApiFactoryDays {
         }
     }
 
-    public static ApiFactoryDays getInstance() {
-        if (apiFactoryDays == null) {
-            apiFactoryDays = new ApiFactoryDays();
+    public static ApiFactoryGroups getInstance() {
+        if (apiFactoryGroups == null) {
+            apiFactoryGroups = new ApiFactoryGroups();
         }
-        return apiFactoryDays;
+        return apiFactoryGroups;
     }
 
-    public ApiServiceDays getApiServiceDays() {
-        return retrofit.create(ApiServiceDays.class);
+    public ApiServiceGroups getApiServiceGroups() {
+        return retrofit.create(ApiServiceGroups.class);
     }
 }

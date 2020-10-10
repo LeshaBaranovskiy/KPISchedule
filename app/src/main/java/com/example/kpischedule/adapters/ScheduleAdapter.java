@@ -1,6 +1,5 @@
 package com.example.kpischedule.adapters;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import com.example.kpischedule.pojo.Lesson;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder> {
 
@@ -36,14 +34,17 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     public void setLessons(List<Lesson> lessons, int week) {
         this.lessons = lessons;
 
+        //Очищаем массивы с парами на каждый день
         mondayWeek.clear();
         tuesdayWeek.clear();
+        wednesdayWeek.clear();
         thursdayWeek.clear();
         fridayWeek.clear();
         saturdayWeek.clear();
         sortedLessonsWeek.clear();
 
-        for (Lesson lesson: lessons) {
+        //В зависимости от дня недели заносим опредленные пары в опредленные дни
+        for (Lesson lesson : lessons) {
             if (week == 1) {
                 if (Integer.parseInt(lesson.getLessonWeek()) == 1) {
                     switch (Integer.parseInt(lesson.getDayNumber())) {
@@ -68,7 +69,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
                     }
                 }
             } else {
-            if (Integer.parseInt(lesson.getLessonWeek()) == 2) {
+                if (Integer.parseInt(lesson.getLessonWeek()) == 2) {
                     switch (Integer.parseInt(lesson.getDayNumber())) {
                         case 1:
                             mondayWeek.add(lesson);
@@ -92,6 +93,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
                 }
             }
         }
+
         sortedLessonsWeek.add(mondayWeek);
         sortedLessonsWeek.add(tuesdayWeek);
         sortedLessonsWeek.add(wednesdayWeek);
@@ -114,6 +116,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     public void onBindViewHolder(@NonNull ScheduleViewHolder holder, int position) {
         holder.textViewWeekDay.setText(lessons.get(0).getDayName());
 
+        //Обнуляем прошлые значения
         holder.textView1LessonName.setText("");
         holder.textView1TeacherName.setText("");
         holder.textView1Auditory.setText("");
@@ -142,8 +145,8 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
 
         List<Lesson> day = sortedLessonsWeek.get(position);
 
-        for (Lesson lesson1: day) {
-            holder.textViewWeekDay.setText(lesson1.getDayName());
+        //Заполняем recyclerView
+        for (Lesson lesson1 : day) {
             switch (Integer.parseInt(lesson1.getLessonNumber())) {
                 case 1:
                     holder.textView1LessonName.setText(lesson1.getLessonFullName());
@@ -191,6 +194,27 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
                     }
                     break;
             }
+        }
+
+        switch (position) {
+            case 0:
+                holder.textViewWeekDay.setText("Понеділок");
+                break;
+            case 1:
+                holder.textViewWeekDay.setText("Вівторок");
+                break;
+            case 2:
+                holder.textViewWeekDay.setText("Середа");
+                break;
+            case 3:
+                holder.textViewWeekDay.setText("Четвер");
+                break;
+            case 4:
+                holder.textViewWeekDay.setText("П'ятниця");
+                break;
+            case 5:
+                holder.textViewWeekDay.setText("Субота");
+                break;
         }
 
     }
