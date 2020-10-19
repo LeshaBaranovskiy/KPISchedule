@@ -108,7 +108,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     @NonNull
     @Override
     public ScheduleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.day_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.day_item_reworked, parent, false);
         return new ScheduleViewHolder(view);
     }
 
@@ -121,26 +121,21 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         holder.textView1TeacherName.setText("");
         holder.textView1Auditory.setText("");
         holder.textView1TypeLesson.setText("");
-        holder.textViewRating1.setText("");
         holder.textView2LessonName.setText("");
         holder.textView2TeacherName.setText("");
         holder.textView2Auditory.setText("");
-        holder.textViewRating2.setText("");
         holder.textView2TypeLesson.setText("");
         holder.textView3LessonName.setText("");
         holder.textView3TeacherName.setText("");
         holder.textView3Auditory.setText("");
-        holder.textViewRating3.setText("");
         holder.textView3TypeLesson.setText("");
         holder.textView4LessonName.setText("");
         holder.textView4TeacherName.setText("");
         holder.textView4Auditory.setText("");
-        holder.textViewRating4.setText("");
         holder.textView4TypeLesson.setText("");
         holder.textView5LessonName.setText("");
         holder.textView5TeacherName.setText("");
         holder.textView5Auditory.setText("");
-        holder.textViewRating5.setText("");
         holder.textView5TypeLesson.setText("");
 
         List<Lesson> day = sortedLessonsWeek.get(position);
@@ -149,49 +144,34 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         for (Lesson lesson1 : day) {
             switch (Integer.parseInt(lesson1.getLessonNumber())) {
                 case 1:
-                    holder.textView1LessonName.setText(lesson1.getLessonFullName());
+                    holder.textView1LessonName.setText(lesson1.getLessonName());
                     holder.textView1TeacherName.setText(lesson1.getTeacherName());
                     holder.textView1Auditory.setText(lesson1.getLessonRoom());
                     holder.textView1TypeLesson.setText(lesson1.getLessonType());
-                    if (lesson1.getTeachers().size() > 0) {
-                        holder.textViewRating1.setText("  Р-г: " + lesson1.getTeachers().get(0).getTeacherRating());
-                    }
                     break;
                 case 2:
-                    holder.textView2LessonName.setText(lesson1.getLessonFullName());
+                    holder.textView2LessonName.setText(lesson1.getLessonName());
                     holder.textView2TeacherName.setText(lesson1.getTeacherName());
                     holder.textView2Auditory.setText(lesson1.getLessonRoom());
                     holder.textView2TypeLesson.setText(lesson1.getLessonType());
-                    if (lesson1.getTeachers().size() > 0) {
-                        holder.textViewRating2.setText("  Р-г: " + lesson1.getTeachers().get(0).getTeacherRating());
-                    }
                     break;
                 case 3:
-                    holder.textView3LessonName.setText(lesson1.getLessonFullName());
+                    holder.textView3LessonName.setText(lesson1.getLessonName());
                     holder.textView3TeacherName.setText(lesson1.getTeacherName());
                     holder.textView3Auditory.setText(lesson1.getLessonRoom());
                     holder.textView3TypeLesson.setText(lesson1.getLessonType());
-                    if (lesson1.getTeachers().size() > 0) {
-                        holder.textViewRating3.setText("  Р-г: " + lesson1.getTeachers().get(0).getTeacherRating());
-                    }
                     break;
                 case 4:
-                    holder.textView4LessonName.setText(lesson1.getLessonFullName());
+                    holder.textView4LessonName.setText(lesson1.getLessonName());
                     holder.textView4TeacherName.setText(lesson1.getTeacherName());
                     holder.textView4Auditory.setText(lesson1.getLessonRoom());
                     holder.textView4TypeLesson.setText(lesson1.getLessonType());
-                    if (lesson1.getTeachers().size() > 0) {
-                        holder.textViewRating4.setText("  Р-г: " + lesson1.getTeachers().get(0).getTeacherRating());
-                    }
                     break;
                 case 5:
-                    holder.textView5LessonName.setText(lesson1.getLessonFullName());
+                    holder.textView5LessonName.setText(lesson1.getLessonName());
                     holder.textView5TeacherName.setText(lesson1.getTeacherName());
                     holder.textView5Auditory.setText(lesson1.getLessonRoom());
                     holder.textView5TypeLesson.setText(lesson1.getLessonType());
-                    if (lesson1.getTeachers().size() > 0) {
-                        holder.textViewRating5.setText("  Р-г: " + lesson1.getTeachers().get(0).getTeacherRating());
-                    }
                     break;
             }
         }
@@ -246,12 +226,6 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         private TextView textView4Auditory;
         private TextView textView5Auditory;
 
-        private TextView textViewRating1;
-        private TextView textViewRating2;
-        private TextView textViewRating3;
-        private TextView textViewRating4;
-        private TextView textViewRating5;
-
         private TextView textView1TypeLesson;
         private TextView textView2TypeLesson;
         private TextView textView3TypeLesson;
@@ -280,12 +254,6 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
             textView3TeacherName = itemView.findViewById(R.id.textView3TeacherName);
             textView4TeacherName = itemView.findViewById(R.id.textView4TeacherName);
             textView5TeacherName = itemView.findViewById(R.id.textView5TeacherName);
-
-            textViewRating1 = itemView.findViewById(R.id.textViewRating1);
-            textViewRating2 = itemView.findViewById(R.id.textViewRating2);
-            textViewRating3 = itemView.findViewById(R.id.textViewRating3);
-            textViewRating4 = itemView.findViewById(R.id.textViewRating4);
-            textViewRating5 = itemView.findViewById(R.id.textViewRating5);
 
             textView1TypeLesson = itemView.findViewById(R.id.textView1TypeLesson);
             textView2TypeLesson = itemView.findViewById(R.id.textView2TypeLesson);

@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewWeekDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline006"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline006"
+        app:layout_constraintStart_toEndOf="@+id/textViewWeekDay"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline074"
+        app:layout_constraintEnd_toStartOf="@+id/guideline097"
+        app:layout_constraintStart_toStartOf="@+id/guideline003"
+        app:layout_constraintTop_toTopOf="@+id/guideline006" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline016"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.8" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <TextView
+                android:id="@+id/textViewFirstClassStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8:30"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@id/textViewFirstClassEnd"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewFirstClassEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:05"
+                app:layout_constraintBottom_toTopOf="@+id/guideline02"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFirstClassStart" />
+
+            <TextView
+                android:id="@+id/textViewSecondClassStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:25"
+                android:textColor="@android:color/black"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline02"
+                app:layout_constraintBottom_toTopOf="@id/textViewSecondClassEnd"/>
+
+            <TextView
+                android:id="@+id/textView1LessonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView1TeacherName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView1TeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView1Auditory"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView1LessonName" />
+
+            <TextView
+                android:id="@+id/textView1Auditory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline02"
+                app:layout_constraintEnd_toStartOf="@id/textView1TypeLesson"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView1TeacherName" />
+
+            <TextView
+                android:id="@+id/textView1TypeLesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@id/guideline02"
+                app:layout_constraintStart_toEndOf="@id/textView1Auditory"
+                app:layout_constraintTop_toBottomOf="@+id/textView1TeacherName" />
+
+            <TextView
+                android:id="@+id/textViewSecondClassEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:00"
+                app:layout_constraintBottom_toTopOf="@+id/guideline04"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewSecondClassStart" />
+
+            <TextView
+                android:id="@+id/textView2LessonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView2TeacherName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline02" />
+
+            <TextView
+                android:id="@+id/textView2TeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView2Auditory"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView2LessonName" />
+
+            <TextView
+                android:id="@+id/textView2Auditory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline04"
+                app:layout_constraintEnd_toStartOf="@id/textView2TypeLesson"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView2TeacherName" />
+
+            <TextView
+                android:id="@+id/textView2TypeLesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@id/guideline04"
+                app:layout_constraintStart_toEndOf="@id/textView2Auditory"
+                app:layout_constraintTop_toBottomOf="@+id/textView2TeacherName" />
+
+            <TextView
+                android:id="@+id/textViewThirdClassStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:20"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@id/textViewThirdClassEnd"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline04" />
+
+            <TextView
+                android:id="@+id/textViewThirdClassEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="13:55"
+                app:layout_constraintBottom_toTopOf="@+id/guideline06"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewThirdClassStart" />
+
+            <TextView
+                android:id="@+id/textView3LessonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView3TeacherName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline04" />
+
+            <TextView
+                android:id="@+id/textView3TeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView3Auditory"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView3LessonName" />
+
+            <TextView
+                android:id="@+id/textView3Auditory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline06"
+                app:layout_constraintEnd_toStartOf="@id/textView3TypeLesson"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView3TeacherName" />
+
+            <TextView
+                android:id="@+id/textView3TypeLesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@id/guideline06"
+                app:layout_constraintStart_toEndOf="@id/textView3Auditory"
+                app:layout_constraintTop_toBottomOf="@+id/textView3TeacherName" />
+
+            <TextView
+                android:id="@+id/textViewFourthClassStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14:15"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@id/textViewFourthClassEnd"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline06" />
+
+            <TextView
+                android:id="@+id/textViewFourthClassEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15:50"
+                app:layout_constraintBottom_toTopOf="@+id/guideline08"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFourthClassStart" />
+
+            <TextView
+                android:id="@+id/textView4LessonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView4TeacherName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline06" />
+
+            <TextView
+                android:id="@+id/textView4TeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView4Auditory"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView4LessonName" />
+
+            <TextView
+                android:id="@+id/textView4Auditory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline08"
+                app:layout_constraintEnd_toStartOf="@id/textView4TypeLesson"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView4TeacherName" />
+
+            <TextView
+                android:id="@+id/textView4TypeLesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@id/guideline08"
+                app:layout_constraintStart_toEndOf="@id/textView4Auditory"
+                app:layout_constraintTop_toBottomOf="@+id/textView4TeacherName" />
+
+            <TextView
+                android:id="@+id/textViewFifthClassStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="16:10"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toTopOf="@id/textViewFifthClassEnd"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline08" />
+
+            <TextView
+                android:id="@+id/textViewFifthClassEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17:45"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewFifthClassStart" />
+
+            <TextView
+                android:id="@+id/textView5LessonName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="#000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView5TeacherName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline08" />
+
+            <TextView
+                android:id="@+id/textView5TeacherName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView5Auditory"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView5LessonName" />
+
+            <TextView
+                android:id="@+id/textView5Auditory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/textView4TypeLesson"
+                app:layout_constraintStart_toStartOf="@id/guideline016"
+                app:layout_constraintTop_toBottomOf="@+id/textView5TeacherName" />
+
+            <TextView
+                android:id="@+id/textView5TypeLesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/textView5Auditory"
+                app:layout_constraintTop_toBottomOf="@+id/textView5TeacherName" />
+
+            <View
+                android:id="@+id/viewLine1lv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline02"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline02" />
+
+            <View
+                android:id="@+id/viewLine2lv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline04"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline04" />
+
+            <View
+                android:id="@+id/viewLine3lv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline06"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline06" />
+
+            <View
+                android:id="@+id/viewLine4lv"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline08"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline08" />
+
+            <View
+                android:id="@+id/viewLine1lh"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/holo_red_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline02"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/viewLine2lh"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/holo_green_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline04"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline02" />
+
+            <View
+                android:id="@+id/viewLine3lh"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/holo_purple"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline06"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline04" />
+
+            <View
+                android:id="@+id/viewLine4lh"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/holo_blue_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/guideline08"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline06" />
+
+            <View
+                android:id="@+id/viewLine5lh"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="@color/holo_orange_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline016"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@id/guideline08" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline006"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline074"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.74" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline003"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline097"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.97" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
