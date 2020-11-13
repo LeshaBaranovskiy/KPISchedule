@@ -5,6 +5,6 @@
         android:title="@string/first_week"/>
     <item android:id="@+id/second_week"
         android:title="@string/second_week" />
-    <item android:id="@+id/next_el"
-        android:title="@string/next_el" />
+    <item android:id="@+id/change_group"
+        android:title="@string/change_group" />
 </menu>

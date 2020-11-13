@@ -1,10 +1,16 @@
 package com.example.kpischedule.pojo;
 
-import java.util.List;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+@Entity(tableName = "lessons")
 public class Lesson {
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     @SerializedName("lesson_id")
     @Expose
     private String lessonId;
@@ -47,12 +53,53 @@ public class Lesson {
     @SerializedName("rate")
     @Expose
     private String rate;
-    @SerializedName("teachers")
-    @Expose
-    private List<Teacher> teachers = null;
-    @SerializedName("rooms")
-    @Expose
-    private List<Room> rooms = null;
+
+    private String zoom = null;
+
+    @Ignore
+    public Lesson(String lessonId, String groupId, String dayNumber, String dayName, String lessonName, String lessonFullName, String lessonNumber, String lessonRoom, String lessonType, String teacherName, String lessonWeek, String timeStart, String timeEnd, String rate, String zoom) {
+        this.lessonId = lessonId;
+        this.groupId = groupId;
+        this.dayNumber = dayNumber;
+        this.dayName = dayName;
+        this.lessonName = lessonName;
+        this.lessonFullName = lessonFullName;
+        this.lessonNumber = lessonNumber;
+        this.lessonRoom = lessonRoom;
+        this.lessonType = lessonType;
+        this.teacherName = teacherName;
+        this.lessonWeek = lessonWeek;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.rate = rate;
+        this.zoom = zoom;
+    }
+
+    public Lesson(int id, String lessonId, String groupId, String dayNumber, String dayName, String lessonName, String lessonFullName, String lessonNumber, String lessonRoom, String lessonType, String teacherName, String lessonWeek, String timeStart, String timeEnd, String rate) {
+        this.id = id;
+        this.lessonId = lessonId;
+        this.groupId = groupId;
+        this.dayNumber = dayNumber;
+        this.dayName = dayName;
+        this.lessonName = lessonName;
+        this.lessonFullName = lessonFullName;
+        this.lessonNumber = lessonNumber;
+        this.lessonRoom = lessonRoom;
+        this.lessonType = lessonType;
+        this.teacherName = teacherName;
+        this.lessonWeek = lessonWeek;
+        this.timeStart = timeStart;
+        this.timeEnd = timeEnd;
+        this.rate = rate;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getLessonId() {
         return lessonId;
@@ -166,19 +213,11 @@ public class Lesson {
         this.rate = rate;
     }
 
-    public List<Teacher> getTeachers() {
-        return teachers;
+    public String getZoom() {
+        return zoom;
     }
 
-    public void setTeachers(List<Teacher> teachers) {
-        this.teachers = teachers;
-    }
-
-    public List<Room> getRooms() {
-        return rooms;
-    }
-
-    public void setRooms(List<Room> rooms) {
-        this.rooms = rooms;
+    public void setZoom(String zoom) {
+        this.zoom = zoom;
     }
 }

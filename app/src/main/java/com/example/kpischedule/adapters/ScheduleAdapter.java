@@ -1,5 +1,8 @@
 package com.example.kpischedule.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kpischedule.R;
 import com.example.kpischedule.pojo.Lesson;
+import com.example.kpischedule.screens.detail.DetailActivity;
+import com.example.kpischedule.screens.schedule.ScheduleActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +32,14 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     private List<Lesson> fridayWeek = new ArrayList<>();
     private List<Lesson> saturdayWeek = new ArrayList<>();
 
+    private Context mContext;
+
     public List<Lesson> getLessons() {
         return lessons;
+    }
+
+    public ScheduleAdapter(Context mContext) {
+        this.mContext = mContext;
     }
 
     public void setLessons(List<Lesson> lessons, int week) {
@@ -197,6 +208,48 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
                 break;
         }
 
+        Intent intent = new Intent(mContext, DetailActivity.class);
+
+        holder.les1.setOnClickListener(v -> {
+            if (!holder.textView1LessonName.getText().toString().isEmpty()) {
+                intent.putExtra("lesson", holder.textView1LessonName.getText().toString());
+                intent.putExtra("type", holder.textView1TypeLesson.getText().toString());
+                mContext.startActivity(intent);
+            }
+        });
+
+        holder.les2.setOnClickListener(v -> {
+            if (!holder.textView2LessonName.getText().toString().isEmpty()) {
+                intent.putExtra("lesson", holder.textView2LessonName.getText().toString());
+                intent.putExtra("type", holder.textView2TypeLesson.getText().toString());
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        holder.les3.setOnClickListener(v -> {
+            if (!holder.textView3LessonName.getText().toString().isEmpty()) {
+                intent.putExtra("lesson", holder.textView3LessonName.getText().toString());
+                intent.putExtra("type", holder.textView3TypeLesson.getText().toString());
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        holder.les4.setOnClickListener(v -> {
+            if (!holder.textView4LessonName.getText().toString().isEmpty()) {
+                intent.putExtra("lesson", holder.textView4LessonName.getText().toString());
+                intent.putExtra("type", holder.textView4TypeLesson.getText().toString());
+                v.getContext().startActivity(intent);
+            }
+        });
+
+        holder.les5.setOnClickListener(v -> {
+            if (!holder.textView5LessonName.getText().toString().isEmpty()) {
+                intent.putExtra("lesson", holder.textView5LessonName.getText().toString());
+                intent.putExtra("type", holder.textView5TypeLesson.getText().toString());
+                v.getContext().startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -232,6 +285,12 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
         private TextView textView4TypeLesson;
         private TextView textView5TypeLesson;
 
+        private View les1;
+        private View les2;
+        private View les3;
+        private View les4;
+        private View les5;
+
         public ScheduleViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -260,6 +319,12 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
             textView3TypeLesson = itemView.findViewById(R.id.textView3TypeLesson);
             textView4TypeLesson = itemView.findViewById(R.id.textView4TypeLesson);
             textView5TypeLesson = itemView.findViewById(R.id.textView5TypeLesson);
+
+            les1 = itemView.findViewById(R.id.les1);
+            les2 = itemView.findViewById(R.id.les2);
+            les3 = itemView.findViewById(R.id.les3);
+            les4 = itemView.findViewById(R.id.les4);
+            les5 = itemView.findViewById(R.id.les5);
         }
     }
 }

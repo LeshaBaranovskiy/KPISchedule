@@ -139,6 +139,7 @@ public class ChooseGroupActivity extends AppCompatActivity implements ChooseGrou
         Intent intent = new Intent(this, ScheduleActivity.class);
         intent.putExtra("group", group);
         startActivity(intent);
+        finish();
     }
 
     //Добавляем группу в sharedPreferences для быстрого захода в следующий раз

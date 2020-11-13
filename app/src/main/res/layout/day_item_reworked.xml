@@ -499,6 +499,59 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideline016"
                 app:layout_constraintStart_toStartOf="@+id/guideline016"
                 app:layout_constraintTop_toTopOf="@id/guideline08" />
+
+            <View
+                android:id="@+id/les1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:tag="1"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline02"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="parent" />
+            <View
+                android:id="@+id/les2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:tag="2"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline04"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@+id/guideline02" />
+            <View
+                android:id="@+id/les3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:tag="3"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline06"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@+id/guideline04" />
+            <View
+                android:id="@+id/les4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:tag="4"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toTopOf="@+id/guideline08"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@+id/guideline06" />
+
+            <View
+                android:id="@+id/les5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:tag="5"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline016"
+                app:layout_constraintTop_toTopOf="@+id/guideline08" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -531,5 +584,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.97" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

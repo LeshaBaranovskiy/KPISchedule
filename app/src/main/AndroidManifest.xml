@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screens.schedule.ScheduleActivity"></activity>
+        <activity android:name=".screens.detail.DetailActivity"></activity>
+        <activity android:name=".screens.schedule.ScheduleActivity" />
         <activity android:name=".screens.choose.ChooseGroupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

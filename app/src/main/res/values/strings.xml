@@ -8,5 +8,13 @@
     <string name="toast_group_not_found">Группа не знайдена</string>
     <string name="first_week">Перший тиждень</string>
     <string name="second_week">Другий тиждень</string>
-    <string name="next_el">Наступний день</string>
+    <string name="change_group">Сменить группу</string>
+    <string name="lesson">lesson</string>
+    <string name="zoom">Ссылка Zoom</string>
+    <string name="edit">edit</string>
+    <string name="link">link</string>
+    <string name="navigation">navigation</string>
+    <string name="type_of_lesson">type_of_lesson</string>
+    <string name="teacher">teacher</string>
+    <string name="save_zoom">save zoom</string>
 </resources>

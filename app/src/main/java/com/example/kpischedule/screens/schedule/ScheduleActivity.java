@@ -7,23 +7,31 @@ import androidx.recyclerview.widget.PagerSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.kpischedule.R;
 import com.example.kpischedule.adapters.ScheduleAdapter;
+import com.example.kpischedule.model.db.LessonDatabase;
 import com.example.kpischedule.pojo.DayResponse;
 import com.example.kpischedule.pojo.Lesson;
+import com.example.kpischedule.screens.choose.ChooseGroupActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Objects;
 
 
@@ -40,6 +48,8 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
     private int remainder;
     private int daysBetween;
 
+    private boolean fromStart = true;
+
     private Calendar calFWeek;
     private Calendar calToday;
 
@@ -50,6 +60,10 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
     private LinearLayoutManager linearLayoutManager;
 
     private SchedulePresenter schedulePresenter;
+
+    private LessonDatabase lessonDatabase;
+
+    private List<Lesson> lessonsFromDb = new ArrayList<>();
 
     //Создаем меню в ActionBar
     @Override
@@ -69,7 +83,8 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
                     break;
                 } else {
                     week = 1;
-                    showSchedule(week, false);
+                    fromStart = false;
+                    showSchedule(week);
                     break;
                 }
             case R.id.second_week:
@@ -77,14 +92,12 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
                     break;
                 } else {
                     week = 2;
-                    showSchedule(week, false);
+                    fromStart = false;
+                    showSchedule(week);
                     break;
                 }
-            case R.id.next_el:
-                Objects.requireNonNull(recyclerView.getLayoutManager()).smoothScrollToPosition(recyclerView, null, linearLayoutManager.findLastVisibleItemPosition() + 1);
-                break;
-            case android.R.id.home:
-                finish();
+            case R.id.change_group:
+                schedulePresenter.deleteAllLessonsWithFinish();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -98,8 +111,8 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //Создаем стрелку "Назад"
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+//        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setHomeButtonEnabled(true);
 
         schedulePresenter = new SchedulePresenter(this);
 
@@ -126,7 +139,7 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
 
         linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
 
-        scheduleAdapter = new ScheduleAdapter();
+        scheduleAdapter = new ScheduleAdapter(this);
 
         //При прокрутке останавливает ровно на элементе
         snapHelper = new PagerSnapHelper();
@@ -136,11 +149,12 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
         recyclerView.setAdapter(scheduleAdapter);
 
         //Загружаем дату
-        showSchedule(week, true);
+        fromStart = true;
+        showSchedule(week);
     }
 
-    private void showSchedule(final int week, final boolean fromStart) {
-        schedulePresenter.loadData(fromStart, groupName);
+    private void showSchedule(final int week) {
+        schedulePresenter.getAllLessons();
 
         if (week == 1) {
             Objects.requireNonNull(getSupportActionBar()).setTitle(getResources().getString(R.string.first_week) + " " + groupName.split(" ")[0].toUpperCase());
@@ -149,12 +163,46 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
         }
     }
 
+    @Override
+    public void finishActivity() {
+        Intent intent = new Intent(this, ChooseGroupActivity.class);
+        startActivity(intent);
+        SharedPreferences pref = getSharedPreferences("group", MODE_PRIVATE);
+        pref.edit().remove("group").apply();
+        finish();
+    }
+
+    @Override
+    public void lessonsFromDb(List<Lesson> lessons) {
+        lessonsFromDb = lessons;
+
+        Log.i("ttt", "" + lessons.size());
+        if (lessonsFromDb.size() > 0) {
+            scheduleAdapter.setLessons(lessonsFromDb, week);
+            scheduleAdapter.notifyDataSetChanged();
+        } else {
+            schedulePresenter.deleteAllLessons();
+            schedulePresenter.loadData(groupName);
+        }
+
+        progressBarSchedule.setVisibility(View.INVISIBLE);
+
+        if (fromStart) {
+            Objects.requireNonNull(recyclerView.getLayoutManager()).scrollToPosition(remainder);
+        }
+    }
+
     //При успешной загрузке данных из Presenter
-    public void onSuccess(DayResponse dayResponse, boolean fromStart) {
+    @Override
+    public void onSuccess(DayResponse dayResponse) {
         progressBarSchedule.setVisibility(View.VISIBLE);
 
         lessons.clear();
         lessons.addAll(dayResponse.getLessons());
+
+        for (Lesson lesson: dayResponse.getLessons()) {
+            schedulePresenter.insertLesson(lesson);
+        }
 
         scheduleAdapter.setLessons(lessons, week);
         scheduleAdapter.notifyDataSetChanged();
@@ -164,6 +212,12 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
         if (fromStart) {
             Objects.requireNonNull(recyclerView.getLayoutManager()).scrollToPosition(remainder);
         }
+    }
+
+    @Override
+    public LessonDatabase getDatabaseContext() {
+        lessonDatabase = LessonDatabase.getInstance(getApplicationContext());
+        return lessonDatabase;
     }
 
     //Расчитать разницу в днях между заданной датой и сегодня
@@ -191,12 +245,18 @@ public class ScheduleActivity extends AppCompatActivity implements ScheduleView 
         if (remainder >= 7) {
             remainder -= 7;
         }
+        Toast.makeText(this, "Зараз " + week + " тиждень", Toast.LENGTH_LONG).show();
     }
 
     //Избегаем утечку данных
     @Override
     protected void onDestroy() {
-        schedulePresenter.disposeDisposable();
         super.onDestroy();
+        schedulePresenter.disposeDisposable();
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
     }
 }
